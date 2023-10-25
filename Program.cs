@@ -7,44 +7,20 @@ namespace Module_4
     {
         public static void Main(string[] args)
         {
-            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", arr[i,j]);
-                }
-                Console.WriteLine();
-            }
+            (string name, int age, string city) anketa;
+            
+            Console.Write("What is your name: ");
+            anketa.name = Console.ReadLine();
+            Console.Write("How old are you: ");
+            anketa.age = int.Parse(Console.ReadLine());
+            Console.Write("Where are you from: ");
+            anketa.city = Console.ReadLine();
 
             Console.WriteLine();
 
-            int value;
-
-            for (int i = 0; i <= arr.GetUpperBound(0); i++)
-            {
-                for (int j = 0; j <= arr.GetUpperBound(1); j++)
-                {
-                    for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
-                    {
-                        if (arr[i,j] > arr[i,k])
-                        {
-                            value = arr[i,k];
-                            arr[i,k] = arr[i,j];
-                            arr[i,j] = value;
-                        }
-                    }
-                }
-            }
-
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write("{0} ", arr[i, j]);
-                }
-                Console.WriteLine();
-            }
+            Console.WriteLine("Your name is {0}", anketa.name);
+            Console.WriteLine("You are {0} years old", anketa.age);
+            Console.WriteLine("You are from {0}", anketa.city);
         }
     }
 }
