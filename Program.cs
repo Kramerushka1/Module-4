@@ -7,20 +7,20 @@ namespace Module_4
     {
         public static void Main(string[] args)
         {
-            (string name, int age, string city) anketa;
-            
-            Console.Write("What is your name: ");
-            anketa.name = Console.ReadLine();
-            Console.Write("How old are you: ");
-            anketa.age = int.Parse(Console.ReadLine());
-            Console.Write("Where are you from: ");
-            anketa.city = Console.ReadLine();
+            var (name, age) = ("Виктор", 28);
+            Console.WriteLine("Мое имя: {0}", name);
+            Console.WriteLine("Мой возраст: {0}", age);
 
             Console.WriteLine();
 
-            Console.WriteLine("Your name is {0}", anketa.name);
-            Console.WriteLine("You are {0} years old", anketa.age);
-            Console.WriteLine("You are from {0}", anketa.city);
+            Console.Write("Введите ваше имя: ");
+            name = Console.ReadLine();
+            Console.Write("Введите ваш возраст: ");
+            age = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("Ваше имя: {0}", name);
+            Console.WriteLine("Ваш возраст: {0}", age);
         }
     }
 }
