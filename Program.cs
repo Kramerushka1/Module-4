@@ -5,24 +5,52 @@ namespace Module_4
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        //Необходимо разработать методику анкетирования пользователей.
+        //Требуется сохранять информацию:
+        //об имени пользователя,
+        //фамилии,
+        //логине,
+        //длине логина,
+        //наличии/отсутствии у пользователя питомца,
+        //возрасте пользователя,
+        //трех любимых цветах пользователя.
+        static void Main(string[] args)
         {
-            (string Name, string Type, double Age, int NameCount) Pet;
-
-            Console.Write("Укажите имя питомца: ");
-            Pet.Name = Console.ReadLine();
-            Console.Write("Укажите тип питомца: ");
-            Pet.Type = Console.ReadLine();
-            Console.Write("Укажите возраст питомца: ");
-            Pet.Age = double.Parse(Console.ReadLine());
-            Pet.NameCount = Pet.Name.Length;
+            (string Name, string Surname, string Login, int LoginCount, bool HasPet, int Age, string[] FavoriteColor) User;
             
-            Console.WriteLine();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Введите имя: ");
+                User.Name = Console.ReadLine();
 
-            Console.WriteLine("Имя питомца: {0}", Pet.Name);
-            Console.WriteLine("Тип питомца: {0}", Pet.Type);
-            Console.WriteLine("Возраст питомца: {0}", Pet.Age);
-            Console.WriteLine("Длина имени питомца: {0}", Pet.NameCount);
+                Console.Write("Введите фамилию: ");
+                User.Surname = Console.ReadLine();
+
+                Console.Write("Введите логин: ");
+                User.Login = Console.ReadLine();
+                User.LoginCount = User.Login.Length;
+
+                Console.Write("Есть ли у вас животные? Да или Нет: ");
+                if (Console.ReadLine() == "Да")
+                {
+                    User.HasPet = true;
+                }
+                else
+                {
+                    User.HasPet = false;
+                }
+
+                Console.Write("Введите возраст: ");
+                User.Age = int.Parse(Console.ReadLine());
+
+                User.FavoriteColor = new string[3];
+                Console.WriteLine("Введите три любимых цвета:");
+                for (int j = 0; j < User.FavoriteColor.Length; j++)
+                {
+                    User.FavoriteColor[j] = Console.ReadLine();
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
